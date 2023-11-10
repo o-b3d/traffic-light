@@ -16,7 +16,7 @@ body {
   box-shadow: 6px 12px 12px 12px gold;
 }
 
-.trafficLight {
+.trafficLights {
   display: flex;
   flex-direction: column;
   gap: 1rem;
