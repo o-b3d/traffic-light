@@ -57,21 +57,42 @@ export default function App() {
     setTrafficLightStopped((toggleState) => !toggleState);
   };
 
-
   return (
-    <>
+    <div
+      className="backgroundImage"
+      style={{ backgroundImage: `url(/pixelbackground.gif)` }}
+    >
       <div className="trafficPole" />
       <div className="trafficLights">
-        <Light color="red" opacity={trafficLight === "red" ? 1 : 0.4} />
-        <Light color="yellow" opacity={trafficLight === "yellow" ? 1 : 0.4} />
-        <Light color="green" opacity={trafficLight === "green" ? 1 : 0.4} />
+        <Light
+          className="redLight"
+          color="red"
+          opacity={trafficLight === "red" ? 1 : 0.4}
+        />
+        <Light
+          className="yellowLight"
+          color="yellow"
+          opacity={trafficLight === "yellow" ? 1 : 0.4}
+        />
+        <Light
+          className="greenLight"
+          color="green"
+          opacity={trafficLight === "green" ? 1 : 0.4}
+        />
       </div>
-      <button onClick={switchTrafficLight}>Switch ↻</button>
-      <button onClick={handleStopButton}>
-        {/*if statement using ? operator to use trafficLightStopped as condition to
+      <span className="buttonContainer">
+        <button className="buttons" onClick={switchTrafficLight}>
+          Switch ↻
+        </button>
+        <button className="buttons" onClick={handleStopButton}>
+          {/*if statement using ? operator to use trafficLightStopped as condition to
         detect if state is true or false and show corresponding text depending on state*/}
-        {trafficLightStopped ? "Start 👍" : "Stop ✋"}
-      </button>
-    </>
+          {trafficLightStopped ? "Start 👍" : "Stop ✋"}
+        </button>
+      </span>
+      <p className="pointers">
+        *Click and hold on any of the lights for something different
+      </p>
+    </div>
   );
 }

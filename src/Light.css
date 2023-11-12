@@ -1,34 +1,116 @@
-body {
-  margin-top: 0;
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.backgroundImage {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .Light {
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  background-color: red;
   opacity: 0.4;
   transition: all 0.3s;
 }
 
-.Light:hover {
+.Light.redLight {
+  border: dotted 2px red;
+  box-shadow: 0 0 20px black inset, 0 0 10px red;
+}
+
+.Light.yellowLight {
+  border: dotted 2px yellow;
+  box-shadow: 0 0 20px black inset, 0 0 10px yellow;
+}
+
+.Light.greenLight {
+  border: dotted 2px green;
+  box-shadow: 0 0 20px black inset, 0 0 10px green;
+}
+
+.Light.redLight:hover {
   opacity: 1 !important;
-  box-shadow: 6px 12px 12px 12px gold;
+  box-shadow: 0 0 20px black inset, 1px 1px 7px 12px rgba(184, 0, 0, 0.75);
+}
+
+.Light.yellowLight:hover {
+  opacity: 1 !important;
+  box-shadow: 0 0 20px black inset, 1px 1px 7px 12px rgba(216, 216, 0, 0.75);
+}
+
+.Light.greenLight:hover {
+  opacity: 1 !important;
+  box-shadow: 0 0 20px black inset, 1px 1px 7px 12px rgba(0, 255, 0, 0.75);
+}
+
+/*:active checks if Light component active, which in my case means clicked and held*/
+.Light.redLight:active {
+  box-shadow: 0 0 20px orange inset, 0 0 12px 24px rgba(184, 0, 0, 0.5);
+}
+
+.Light.yellowLight:active {
+  box-shadow: 0 0 20px white inset, 0 0 12px 24px rgba(216, 216, 0, 0.5);
+}
+
+.Light.greenLight:active {
+  box-shadow: 0 0 20px aqua inset, 0 0 12px 24px rgba(0, 255, 0, 0.5);
 }
 
 .trafficLights {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  border-style: solid;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 20px;
+  border: solid 5px rgb(41, 41, 41);
   width: fit-content;
   margin: auto;
+  background-color: rgb(71, 71, 71);
 }
 
 .trafficPole {
-  width: 10px;
-  height: 100px;
-  background-color: black;
+  width: 30px;
+  height: 152px;
+  background-image: linear-gradient(-0deg, #777 10%, #ccc 30%, #434343);
   margin: auto;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.buttons {
+  margin: auto;
+  width: 315px;
+  height: 145px;
+  border-radius: 20px;
+  border: solid 5px rgb(41, 41, 41);
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 2rem;
+  background-color: rgb(172, 172, 172);
+  background: radial-gradient(circle, white 0%, rgba(0,0,0,0.5) 100%)
+  
+}
+
+.pointers {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  color: white;
 }
