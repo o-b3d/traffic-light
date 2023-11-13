@@ -1,3 +1,3 @@
 # React + Vite
 
-Click to view live site: [Here](https://github.com/o-b3d/samplecounter.git)
+Click to view live site: [Here](https://traffic-light-tau.vercel.app/)
